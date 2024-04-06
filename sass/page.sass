@@ -1,0 +1,329 @@
+@import "../node_modules/bootstrap/scss/bootstrap"
+@import "../node_modules/bootstrap/scss/functions"
+
+@import "../node_modules/bootstrap/scss/variables"
+@import "../node_modules/bootstrap/scss/variables-dark"
+
+@import "../node_modules/bootstrap/scss/maps"
+@import "../node_modules/bootstrap/scss/mixins"
+@import "../node_modules/bootstrap/scss/root"
+
+@import "../node_modules/bootstrap/scss/utilities"
+@import "../node_modules/bootstrap/scss/reboot"
+@import "../node_modules/bootstrap/scss/type"
+@import "../node_modules/bootstrap/scss/images"
+@import "../node_modules/bootstrap/scss/containers"
+@import "../node_modules/bootstrap/scss/grid"
+@import "../node_modules/bootstrap/scss/helpers"
+
+@import "https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap"
+@import "https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+
+*,
+*::after,
+*::before
+    // For debugging
+    // border: 1px dotted red
+    --ease-type: scale-easeOutElastic
+    --ease-len: 1s
+
+    transition: var(--ease-len) ease
+
+.soft-color
+    --color-shift-time: .1s
+    --size-shift-time: .3s
+
+    -webkit-transition: background-color var(--color-shift-time) linear
+    -ms-transition: background-color var(--color-shift-time) linear
+    transition: background-color var(--color-shift-time) linear
+
+    transform: var(--size-shift-time) ease-in-out
+
+:root
+    --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem)
+    --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem)
+    --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem)
+    --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem)
+    --font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem)
+    --font-size-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem)
+    --font-size-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem)
+
+    --font-scifi: "Source Code Pro", Arial, Helvetica, sans-serif
+    --font-rale: "Raleway"
+
+.rounded
+    border-radius: 10
+
+.color-ease
+    transition: background-color ease .25s
+
+.f-sci
+    font: var(--font-scifi)
+
+.f-rale
+    font: var(--font-rale)
+
+.saturate
+    filter: saturate(3)
+.grayscale
+    filter: grayscale(100%)
+.contrast
+    filter: contrast(160%)
+.brightness
+    filter: brightness(0.25)
+.blur
+    filter: blur(3px)
+.invert
+    filter: invert(100%)
+.sepia
+    filter: sepia(100%)
+.huerotate
+    filter: hue-rotate(180deg)
+.rss.opacity
+    filter: opacity(50%)
+
+html,
+body
+    @extend .color-ease
+    background: #b98f8f
+    margin: 0
+    height: 100vh
+    display: grid
+    grid-template-rows: auto 1fr
+
+h1
+    font-size: var(--font-size-xxl)
+
+h2
+    font-size: var(--font-size-xxl)
+
+h3
+    font-size: var(--font-size-xl)
+
+h4
+    font-size: var(--font-size-lg)
+
+h5
+    font-size: var(--font-size-md)
+
+h6
+    font-size: var(--font-size-base)
+
+p
+    font-size: var(--font-size-base)
+    transition: font-size 0.3s ease
+
+li
+    list-style: none
+
+[data-bs-theme="dark"] header
+    box-shadow: 0px 4px 8px rgba(88, 88, 88, 0.2)
+
+.drop-shadow
+    box-shadow: 0px 10px 15px 7px rgba(0,0,0,0.1)
+
+#opus-container
+    @extend .drop-shadow
+    margin: 0 10vw
+    background: rgb(236,236,236)
+    background: linear-gradient(177deg, rgba(236,236,236,1) 0%, rgba(232,199,189,1) 100%)
+    height: 40vw
+    max-height: 400px
+    border-radius: 0 0 20px 20px
+    position: relative
+
+#opus-img
+    @extend .drop-shadow
+    position: absolute
+    top: 50%
+    transform: translateX(-50%) translateY(-50%)
+    background: rgb(236,236,236)
+    background: linear-gradient(177deg, rgba(236,236,236,1) 0%, rgba(232,199,189,1) 100%)
+    height: 35vw
+    max-height: 350px
+    width: auto
+    border-radius: 10px
+
+#project-organizer
+    @extend .drop-shadow
+    margin-top: -50px
+    padding: 50px 10px 10px 10px
+    color: black
+    background: #eeacac
+    width: 100%
+    height: auto
+    border-radius: 10px
+
+#project-organizer li
+    max-height: 0
+    transition: max-height .8s ease-out, background-color .4s ease, transform .4s ease, drop-shadow .4s ease
+
+#project-organizer li.expand
+    max-height: 200px
+
+.project-card
+    border-radius: 10px
+    padding: 10px
+    margin: 20px 10px
+    background-color: #efbbbb
+
+    &:hover
+        background-color: #f5d1d1
+        transform: scale(1.1)
+        @extend .drop-shadow
+
+    a
+        color: #062137
+        text-decoration: none
+
+.nav-up
+    transform: translateY(-100px)
+
+.title
+    color: var(--text-color)
+    font-size: 48px
+    font-weight: 200
+    word-wrap: normal
+    transition: font-size 0.3s ease
+
+.display-box
+    background: var(--bs-primary-bg-subtle)
+    color: var(--itext)
+    padding: 10px
+    margin: 10vh
+    border-radius: 10px
+    font-weight: 400
+    transition: margin 0.5s ease
+
+.glow
+    -webkit-box-shadow: 0px 0px 105px 45px rgba(0,217,255,0.28)
+    -moz-box-shadow: 0px 0px 105px 45px rgba(0,217,255,0.28)
+    box-shadow: 0px 0px 105px 45px rgba(0,217,255,0.28)
+
+    &[data-bs-theme="dark"]
+        -webkit-box-shadow: 0px 0px 105px 45px rgba(255,255,255,0.31)
+        -moz-box-shadow: 0px 0px 105px 45px rgba(255,255,255,0.31)
+        box-shadow: 0px 0px 105px 45px rgba(255,255,255,0.31)
+
+.glow-ivs
+    -webkit-box-shadow: 0px 0px 105px 45px rgba(0, 0, 0, 0.07)
+    -moz-box-shadow: 0px 0px 105px 45px rgba(0, 0, 0, 0.07)
+    box-shadow: 0px 0px 105px 45px rgba(0, 0, 0, 0.07)
+
+    &[data-bs-theme="dark"]
+        -webkit-box-shadow: 0px 0px 105px 45px rgba(255,255,255,0.31)
+        -moz-box-shadow: 0px 0px 105px 45px rgba(255,255,255,0.31)
+        box-shadow: 0px 0px 105px 45px rgba(255,255,255,0.31)
+
+.glow.light
+    -webkit-box-shadow: 0px 0px 105px 15px rgba(255, 255, 255, 0.03)
+    -moz-box-shadow: 0px 0px 105px 15px rgba(255, 255, 255, 0.03)
+    box-shadow: 0px 0px 105px 15px rgba(255, 255, 255, 0.03)
+
+.glow.dark
+    -webkit-box-shadow: 0px 0px 105px 45px rgba(0, 0, 0, 0.07)
+    -moz-box-shadow: 0px 0px 105px 45px rgba(0, 0, 0, 0.07)
+    box-shadow: 0px 0px 105px 45px rgba(0, 0, 0, 0.07)
+
+.smooth-size
+    transition: width ease var(--size-shift-time)
+    transition: height ease var(--size-shift-time)
+
+#main-logo-container
+    @extend .rounded-3
+    padding: 10svh 5svw
+    margin: 5% 5svw
+    width: fit-content
+    background-color: rgba(255, 255, 255, 0.8)
+
+div[pdf="render"] canvas
+    @extend .shadow-lg
+    border: solid black .5px
+    border-radius: 10px
+    display: flex
+    flex-direction: row
+
+main
+    margin: 10px 20%
+    padding: 10px
+
+footer
+    background-image: url('/assets/images/wave.svg')
+    background-size: cover
+    background-position: center
+    border-radius: 10px 10px 0 0
+    color: var(--text-color)
+    text-align: center
+    width: 90vw
+    margin: auto 15px
+
+.centered
+    align-items: center
+    justify-content: center
+    justify-self: center
+    text-align: center
+
+    &.fb
+        display: flex
+        align-items: center
+
+    &.tmp
+        display: flex
+        align-items: center
+
+.left
+    padding: 20px
+
+.right
+    padding: 20px
+    margin-left: auto
+
+.glass
+    background: rgba( 255, 255, 255, 0.1 )
+    box-shadow: 0 8px 32px 0 rgba(129, 129, 129, 0.37)
+    backdrop-filter: blur( 5.5px )
+    -webkit-backdrop-filter: blur( 5.5px )
+
+@keyframes fader
+    from
+        opacity: 1.0
+
+    to
+        opacity: 0.0
+
+/* Phone */
+@media only screen and (max-width : 710px)
+
+    /* landscape orientation */
+    .centered.tmp
+        display: block
+
+    #gti-logo
+        max-width: 50vw
+
+    .push-left
+        margin: auto
+        padding: 10px
+
+@media only screen and (min-width : 375px) and (max-width : 667px) and (orientation : portrait)
+    /* portrait orientation */
+
+/* Tablet */
+@media only screen and (min-width : 768px) and (max-width : 834px) and (orientation : landscape)
+    /* landscape orientation */
+
+@media only screen and (min-width : 768px) and (max-width : 834px) and (orientation : portrait)
+    /* portrait orientation */
+
+@media screen and (max-width: 650px)
+    .title
+        font-size: 24px
+
+    .sub-title
+        font-size: 12px
+
+    .display-box
+        margin: 5vh 0
+
+    .lucky-message
+        font-size: 8px
