@@ -110,11 +110,14 @@ h6
     font-size: var(--font-size-base)
 
 p
-    font-size: var(--font-size-base)
+    font-size: var(--font-size-sm)
     transition: font-size 0.3s ease
 
 li
     list-style: none
+
+a
+    color: #062137
 
 [data-bs-theme="dark"] header
     box-shadow: 0px 4px 8px rgba(88, 88, 88, 0.2)
@@ -248,12 +251,13 @@ main
     padding: 10px
 
 footer
-    background-image: url('/assets/images/wave.svg')
+    @extend .centered
+    background-color: #eeacac
     background-size: cover
     background-position: center
     border-radius: 10px 10px 0 0
-    color: var(--text-color)
-    text-align: center
+    padding: 20px
+    padding-bottom: 5px
     width: 90vw
     margin: auto 15px
 

@@ -14260,12 +14260,16 @@ h6, .h6 {
 }
 
 p {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   transition: font-size 0.3s ease;
 }
 
 li {
   list-style: none;
+}
+
+a {
+  color: #062137;
 }
 
 [data-bs-theme=dark] header {
@@ -14402,27 +14406,27 @@ main {
 }
 
 footer {
-  background-image: url("/assets/images/wave.svg");
+  background-color: #eeacac;
   background-size: cover;
   background-position: center;
   border-radius: 10px 10px 0 0;
-  color: var(--text-color);
-  text-align: center;
+  padding: 20px;
+  padding-bottom: 5px;
   width: 90vw;
   margin: auto 15px;
 }
 
-.centered {
+.centered, footer {
   align-items: center;
   justify-content: center;
   justify-self: center;
   text-align: center;
 }
-.centered.fb {
+.centered.fb, footer.fb {
   display: flex;
   align-items: center;
 }
-.centered.tmp {
+.centered.tmp, footer.tmp {
   display: flex;
   align-items: center;
 }
@@ -14454,7 +14458,7 @@ footer {
 /* Phone */
 @media only screen and (max-width: 710px) {
   /* landscape orientation */
-  .centered.tmp {
+  .centered.tmp, footer.tmp {
     display: block;
   }
   #gti-logo {

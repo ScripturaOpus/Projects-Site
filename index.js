@@ -6,7 +6,7 @@ async function renderRepo(repo) {
     card.classList = "project-card";
 
     card.innerHTML = `<a href="https://github.com/ScripturaOpus/${repo.name}">
-    <h5>${repo.name}</h5>
+    <h6>${repo.name}</h6>
     <p >${repo.description || ""}</p>
 </a>`;
 
